@@ -23,7 +23,7 @@ In this exercise you will deploy a fresh Oracle database using your *Initials*\ 
    - **Description** - (Optional)
    - **Software Profile** - *Initials*\ _ORACLE_19C
    - **Compute Profile** - ORACLE_SMALL
-   - **Network Profile** - *User VLAN*\ _ORACLE_NETWORK
+   - **Network Profile** - Primary_ORACLE_NETWORK
    - Select **Enable High Availability**
    - **SYS ASM Password** - oracle
    - **SSH Public Key for Node Access** -

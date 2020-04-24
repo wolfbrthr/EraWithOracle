@@ -4,102 +4,102 @@
 Deploying Oracle
 -----------------
 
-Each quarter, Oracle releases a grouping of patches referred to as a PSU. **In this lab you will walk through the deployment and patching of both Oracle and Grid software for an Oracle 19c database using Era.**
+Traditional database VM deployment over resembles the diagram below. The process generally starts with a IT ticket for a database (from Dev, Test, QA, Analytics, etc.). Next one or more teams will need to deploy the storage resources and VM(s) required. Once infrastructure is ready, a DBA needs to provision and configure database software. Once provisioned, any best practices and data protection/backup policies need to be applied. Finally the database can be handed over to the end user. That's a lot of handoffs, and the potential for a lot of friction.
 
-Manual Oracle VM Deployment
-+++++++++++++++++++++++++++
+.. figure:: images/0.png
 
-In this exercise, you will deploy an Oracle database VM, using pre-created disk images. This VM is the running Oracle 19c with April PSU patches applied.
+Whereas with a Nutanix cluster and Era, provisioning and protecting a database should take you no longer than it took to read this intro.
+
+**In this lab you will deploy a Oracle VM, by cloning a source Oracle 19c Source VM. This VM will act as a master image to create a profile for deploying additional SQL VMs using Era.**
+
+Clone Source Oracle VM
+++++++++++++++++++++++
+
+This VM is running Oracle 19c with April PSU patches applied.
 
 #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
 
-#. Click **Create VM**.
+   .. figure:: images/1.png
 
-#. Select your assigned cluster and click **OK**.
+#. Select the checkbox for **Oracle19cSource**, and click **Actions > Clone**.
+
+   .. figure:: images/1b.png
 
 #. Fill out the following fields:
 
+   - **Number Of Clones** - 1
    - **Name** - *Initials*\ _oracle_base
    - **Description** - (Optional) Description for your VM.
    - **vCPU(s)** - 2
    - **Number of Cores per vCPU** - 1
    - **Memory** - 8 GiB
 
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_bootdisk.qcow2
-      - Select **Add**
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_disk1.qcow2
-      - Select **Add**
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_disk2.qcow2
-      - Select **Add**
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_disk3.qcow2
-      - Select **Add**
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_disk4.qcow2
-      - Select **Add**
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_disk5.qcow2
-      - Select **Add**
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_disk6.qcow2
-      - Select **Add**
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_disk7.qcow2
-      - Select **Add**
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_disk8.qcow2
-      - Select **Add**
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - 19c_disk9.qcow2
-      - Select **Add**
-
-   - Select **Add New NIC**
-      - **VLAN Name** - *Assigned User VLAN*
-      - Select **Add**
-
 #. Click **Save** to create the VM.
 
    You will now create a copy of this VM which will later be used to install October PSU patches.
 
-#. Once the VM has been created, select your *Initials*\ **_oracle_base** and click **Actions > Clone**.
-
-   .. figure:: images/1.png
+#. Once the VM has been created, click **Actions > Clone** again.
 
 #. Change the name to *Initials*\ **_oracle_patched** and click **Save**.
 
 #. Select both VMs and click **Actions > Power On**.
+
+Exploring Era Resources
++++++++++++++++++++++++
+
+Era is distributed as a virtual appliance that can be installed on either AHV or ESXi. For the purposes of conserving memory resources, a shared Era server has already been deployed on your cluster.
+
+.. note::
+
+   If you're interested, instructions for the brief installation of the Era appliance can be found `here <https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Era-User-Guide-v12:era-era-installing-on-ahv-t.html>`_.
+
+#. In **Prism Central > VMs > List**, identify the IP address assigned to the **EraServer-\*** VM using the **IP Addresses** column.
+
+#. Open \https://*ERA-VM-IP:8443*/ in a new browser tab.
+
+#. Login using the following credentials:
+
+   - **Username** - admin
+   - **Password** - nutanix/4u
+
+#. From the **Dashboard** dropdown, select **Administration**.
+
+#. Under **Cluster Details**, note that Era has already been configured for your assigned cluster.
+
+   .. figure:: images/6.png
+
+#. Select **Era Resources** from the left-hand menu.
+
+#. Review the configured Networks. If no Networks show under **VLANs Available for Network Profiles**, click **Add**. Select **Secondary** VLAN and click **Add**.
+
+   .. note::
+
+      Leave **Manage IP Address Pool** unchecked, as we will be leveraging the cluster's IPAM to manage addresses
+
+   .. figure:: images/era_networks_001.png
+
+#. From the dropdown menu, select **SLAs**.
+
+   .. figure:: images/7a.png
+
+   Era has five built-in SLAs (Gold, Silver, Bronze, Zero, and Brass). SLAs control however of the database server is backed up. This can with a combination of Continuous Protection, Daily, Weekly Monthly and Quarterly protection intervals.
+
+#. From the dropdown menu, select **Profiles**.
+
+   Profiles pre-define resources and configurations, making it simple to consistently provision environments and reduce configuration sprawl. For example, Compute Profiles specifiy the size of the database server, including details such as vCPUs, cores per vCPU, and memory.
+
+#. Under **Network**, click **+ Create**.
+
+   .. figure:: images/8.png
+
+#. Fill out the following fields and click **Create**:
+
+   - **Engine** - ORACLE
+   - **Type** - Single Instance
+   - **Name** - Primary_ORACLE_NETWORK
+   - **Public Service VLAN** - Secondary
+
+   .. figure:: images/9.png
 
 Register Oracle Server with Era
 +++++++++++++++++++++++++++++++
@@ -107,8 +107,6 @@ Register Oracle Server with Era
 In this exercise, you will register your April PSU VM and register it as version 1.0 of your Oracle 19c Software Profile. The Software Profile is a template containing both the operating system and database software, and can be used to deploy additional database servers.
 
 #. In **Era**, select **Database Servers** from the dropdown menu and **List** from the lefthand menu.
-
-#. Click **+ Register**.
 
 #. Click **+ Register** and fill out the following **Database Server** fields:
 
@@ -131,7 +129,9 @@ In this exercise, you will register your April PSU VM and register it as version
 
    .. figure:: images/2.png
 
-#. Click **Register** and monitor the progress on the **Operations** page. This process should take approximately 2 minutes. Wait for the registration operation to successfully complete before moving on.
+#. Click **Register**
+
+#. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 5 minutes. Wait for the registration operation to successfully complete before moving on.
 
    Once the *Initials*\ **_oracle_base** server has been registered with Era, we need to create a software profile in order to deploy additional Oracle VMs.
 
