@@ -88,7 +88,7 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 
    Profiles pre-define resources and configurations, making it simple to consistently provision environments and reduce configuration sprawl. For example, Compute Profiles specifiy the size of the database server, including details such as vCPUs, cores per vCPU, and memory.
 
-#. Under **Network**, click **+ Create**.
+#. If you do not see any networks defined under **Network**, click **+ Create**.
 
    .. figure:: images/8.png
 
@@ -151,4 +151,35 @@ In this exercise, you will register your April PSU VM and register it as version
 
 #. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 5 minutes.
 
-#. Once the profile creation completes successfully, power off your *Initials*\ **_oracle_base** VM in Prism.
+Register Your Database
+++++++++++++++++++++++
+
+#. In **Era**, select **Databases** from the dropdown menu and **Sources** from the lefthand menu.
+
+   .. figure:: images/11.png
+
+#. Click **+ Register** and fill out the following fields:
+
+   - **Engine** - ORACLE
+   - **Database is on a Server that is:** - Registered
+   - **Registered Database Servers** - Select your registered *Initials*\ _oracle_base VM
+
+   .. figure:: images/12.png
+
+#. Click **Next**
+
+   - **Database Name in Era** - *Initials*\ -orcl
+   - **SID** - orcl19c
+
+   .. figure:: images/13.png
+
+#. Click **Next**
+
+   - **Name** - *Initials*\ -orcl_TM
+   - **SLA** - DEFAULT_OOB_BRASS_SLA (no continuous replay)
+
+   .. figure:: images/14.png
+
+#. Click **Register**
+
+#. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 5 minutes.

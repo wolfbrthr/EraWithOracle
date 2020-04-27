@@ -8,8 +8,8 @@
 
    labsetup/labsetup
    deploy_oracle/deploy_oracle
-   admin_oracle/admin_oracle
    deploy_oracle_era/deploy_oracle_era
+   admin_oracle/admin_oracle
    patching_oracle/patching_oracle
 
 .. toctree::
