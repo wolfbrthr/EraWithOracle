@@ -46,6 +46,7 @@ Write New Table Into Database
    - **User Name** - oracle
    - **Password** - Nutanix/4u
 
+
    .. code-block:: Bash
 
       ssh oracle@PRODDB IP
@@ -150,6 +151,7 @@ Delete Table
    - **User Name** - oracle
    - **Password** - Nutanix/4u
 
+
    .. code-block:: Bash
 
       ssh oracle@PRODDB_Clone1 IP
@@ -166,14 +168,16 @@ Delete Table
 
       DROP TABLE testlabtable;
 
+
 #. Verify the table is gone by executing the following to list the table:
 
    .. codeblock:: Bash
 
       select owner as schema_name,
-       table_name
-       from sys.all_tables
-       where table_name like 'TEST%';
+      table_name
+      from sys.all_tables
+      where table_name like 'TEST%';
+
 
 Clone Refresh
 .............
@@ -196,6 +200,7 @@ Verify Table is Back
    - **User Name** - oracle
    - **Password** - Nutanix/4u
 
+
    .. code-block:: Bash
 
       ssh oracle@PRODDB_Clone1 IP
@@ -214,6 +219,7 @@ Verify Table is Back
        table_name
        from sys.all_tables
        where table_name like 'TEST%';
+
 
 Takeaways
 +++++++++
