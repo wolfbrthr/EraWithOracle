@@ -50,13 +50,17 @@ In this exercise, you will apply the October PSU patches to your manually cloned
 
    .. figure:: images/9.png
 
-#. Click **Register** and monitor the progress on the **Operations** page. This process should take approximately 2 minutes.
+#. Click **Register**
+
+#. Monitor the progress on the **Operations** page. This process should take approximately 5 minutes.
 
 #. Once registration completes, select **Era > Profiles > Software** and click your *Initials*\ **_ORACLE_19C** Software Profile. Observe that Era provides complete introspection into the packages installed within the operating system, including the **Database Software** and **Grid Software**. Note the **Patches Found** under **Database Software**.
 
    .. figure:: images/10.png
 
 #. With your *Initials*\ **_ORACLE_19C** Software Profile selected, click **+ Create** to create a new version based on the *Initials*\ **_oracle_patched** VM you registered in the previous step.
+
+   .. figure:: images/10b.png
 
 #. Fill out the following fields and click **Create**:
 
@@ -121,7 +125,6 @@ Takeaways
 
 What are the key things we learned in this lab?
 
-- Era can make you 3 inches taller, and help bring in your groceries from the car
 - Software Profiles can be versioned and used to deploy consistent updates to existing database servers
 - Software Profiles also simplify the patching process reducing the amount of manual patching needed in an environment
 - Scheduling updates can be used to hit change windows or SLA uptime windows.
