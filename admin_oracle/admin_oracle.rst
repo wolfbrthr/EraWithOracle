@@ -46,10 +46,9 @@ Write New Table Into Database
    - **User Name** - oracle
    - **Password** - Nutanix/4u
 
+   .. code-block:: Bash
 
-     .. code-block:: Bash
-
-       ssh oracle@PRODDB IP
+     ssh oracle@PRODDB IP
 
 #. Launch **sqlplus**
 
@@ -148,9 +147,9 @@ Delete Table
    - **User Name** - oracle
    - **Password** - Nutanix/4u
 
-     .. code-block:: Bash
+   .. code-block:: Bash
 
-       ssh oracle@PRODDB_Clone1 IP
+     ssh oracle@PRODDB_Clone1 IP
 
 #. Launch **sqlplus**
 
@@ -194,9 +193,9 @@ Verify Table is Back
    - **User Name** - oracle
    - **Password** - Nutanix/4u
 
-     .. code-block:: Bash
+   .. code-block:: Bash
 
-       ssh oracle@PRODDB_Clone1 IP
+     ssh oracle@PRODDB_Clone1 IP
 
 #. Launch **sqlplus**
 
