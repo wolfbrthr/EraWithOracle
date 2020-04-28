@@ -47,37 +47,34 @@ Write New Table Into Database
    - **Password** - Nutanix/4u
 
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      ssh oracle@PRODDB IP
+       ssh oracle@PRODDB IP
 
 #. Launch **sqlplus**
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      sqlplus / as sysdba
+       sqlplus / as sysdba
 
 #. Execute the following to create a table:
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      CREATE TABLE testlabtable
-      (
-      column1 VARCHAR(30),
-      column2 DATE
-      );
-
+       CREATE TABLE testlabtable
+       (
+       column1 VARCHAR(30),
+       column2 DATE
+       );
 
 #. Verify the new table is there by executing the following to list the table:
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      select owner as schema_name,
-      table_name
-      from sys.all_tables
-      where table_name like 'TEST%';
-
-
+       select owner as schema_name,
+       table_name
+       from sys.all_tables
+       where table_name like 'TEST%';
 
 Take Manual Snapshot of Database
 ................................
@@ -152,32 +149,31 @@ Delete Table
    - **Password** - Nutanix/4u
 
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      ssh oracle@PRODDB_Clone1 IP
+       ssh oracle@PRODDB_Clone1 IP
 
 #. Launch **sqlplus**
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      sqlplus / as sysdba
+       sqlplus / as sysdba
 
 #. Execute the following to Drop the table:
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      DROP TABLE testlabtable;
+       DROP TABLE testlabtable;
 
 
 #. Verify the table is gone by executing the following to list the table:
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      select owner as schema_name,
-      table_name
-      from sys.all_tables
-      where table_name like 'TEST%';
-
+       select owner as schema_name,
+       table_name
+       from sys.all_tables
+       where table_name like 'TEST%';
 
 Clone Refresh
 .............
@@ -201,25 +197,24 @@ Verify Table is Back
    - **Password** - Nutanix/4u
 
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      ssh oracle@PRODDB_Clone1 IP
+       ssh oracle@PRODDB_Clone1 IP
 
 #. Launch **sqlplus**
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      sqlplus / as sysdba
+       sqlplus / as sysdba
 
 #. Verify the table is back by executing the following to list the table:
 
-   .. code-block:: Bash
+     .. code-block:: Bash
 
-      select owner as schema_name,
-      table_name
-      from sys.all_tables
-      where table_name like 'TEST%';
-
+       select owner as schema_name,
+       table_name
+       from sys.all_tables
+       where table_name like 'TEST%';
 
 Takeaways
 +++++++++
