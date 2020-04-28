@@ -148,7 +148,6 @@ Delete Table
    - **User Name** - oracle
    - **Password** - Nutanix/4u
 
-
      .. code-block:: Bash
 
        ssh oracle@PRODDB_Clone1 IP
@@ -164,7 +163,6 @@ Delete Table
      .. code-block:: Bash
 
        DROP TABLE testlabtable;
-
 
 #. Verify the table is gone by executing the following to list the table:
 
@@ -195,7 +193,6 @@ Verify Table is Back
 
    - **User Name** - oracle
    - **Password** - Nutanix/4u
-
 
      .. code-block:: Bash
 
