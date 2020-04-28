@@ -58,7 +58,7 @@ In this exercise, you will apply the October PSU patches to your manually cloned
 
    .. figure:: images/10.png
 
-#. With your *Initials*\ **_ORACLE_19C** Software Profile selected, click **+ Create** to create a new version based on the *Initials*\ **_oracle_patched** VM you registered in the previous step.
+#. Click into your *Initials*\ **_ORACLE_19C** Software Profile, and click **+ Create** to create a new version based on the *Initials*\ **_oracle_patched** VM you registered in the previous step.
 
    .. figure:: images/10b.png
 
