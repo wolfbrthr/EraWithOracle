@@ -52,14 +52,31 @@ Write New Table Into Database
 
 #. Launch **sqlplus**
 
-   - **User Name** - sysdba
-   - **Password** - oracle
-
    .. code-block:: Bash
 
-      sqlplus
+      sqlplus / as sysdba
 
-#.
+#. Execute the following to create a table:
+
+   .. codeblock:: SQL
+
+      CREATE TABLE testlabtable
+      (
+      column1 VARCHAR(30),
+      column2 DATE
+      );
+
+
+#. Verify the new table is there by executing the following to list the table:
+
+   .. codeblock:: SQL
+
+      select owner as schema_name,
+       table_name
+       from sys.all_tables
+       where table_name like 'TEST%';
+
+
 
 Take Manual Snapshot of Database
 ................................
@@ -68,15 +85,15 @@ Take Manual Snapshot of Database
 
 #. Click on the Time Machine for your Database *Initials*\ -proddb_TM
 
-   .. figure:: images/
+   .. figure:: images/6.png
 
 #. Click **Actions > Snapshot**.
 
-   .. Figure:: images/
+   .. Figure:: images/7.png
 
    - **Snapshot Name** - *Initials*\ -proddb-1st-Snapshot
 
-   .. Figure:: images/
+   .. Figure:: images/8.png
 
 #. Click **Create**
 
@@ -87,23 +104,34 @@ Clone Your Database Server & Database
 
 #. In **Era**, select **Time Machines** from the dropdown menu and select *Initials*\ -proddb_TM
 
-#. Click **Actions > Clone Database > Single Node Database**.
+#. Click **Actions > Clone Database**.
 
    - **Snapshot** - *Initials*\ -proddb-1st-Snapshot (Date Time)
 
-   .. figure:: images/
+   .. figure:: images/9.png
+
+#. Click **Next*
 
    - **Database Server** - Create New Server
    - **Database Server Name** - *Initials*\ -proddb_Clone1
    - **Compute Profile** - ORACLE_SMALL
    - **Network Profile** - Primary-ORACLE-Network
-   - **Administrator Password** - Nutanix/4u
+   - **SSH Public Key Through** - Text
 
-   .. figure:: images/
+   ::
 
-   - **Clone Name** - *Initials*\ _proddb
+      ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAii7qFDhVadLx5lULAG/ooCUTA/ATSmXbArs+GdHxbUWd/bNGZCXnaQ2L1mSVVGDxfTbSaTJ3En3tVlMtD2RjZPdhqWESCaoj2kXLYSiNDS9qz3SK6h822je/f9O9CzCTrw2XGhnDVwmNraUvO5wmQObCDthTXc72PcBOd6oa4ENsnuY9HtiETg29TZXgCYPFXipLBHSZYkBmGgccAeY9dq5ywiywBJLuoSovXkkRJk3cd7GyhCRIwYzqfdgSmiAMYgJLrz/UuLxatPqXts2D8v1xqR9EPNZNzgd4QHK4of1lqsNRuz2SxkwqLcXSw0mGcAL8mIwVpzhPzwmENC5Orw==
 
-   .. figure:: images/
+   .. figure:: images/10.png
+
+#. Click **Next*
+
+   - **Clone Name** - *Initials*\ _proddb_Clone1
+   -  **SID** - *Initials*\ prod
+   -  **SYS and SYSTEM Password** - Nutanix/4u
+   -  **Database Parameter Profile** - ORACLE_SMALL_PARAMS
+
+   .. figure:: images/11.png
 
 #. Click **Clone**
 
@@ -128,14 +156,24 @@ Delete Table
 
 #. Launch **sqlplus**
 
-   - **User Name** - sysdba
-   - **Password** - oracle
-
    .. code-block:: Bash
 
-      sqlplus
+      sqlplus / as sysdba
 
-#.
+#. Execute the following to Drop the table:
+
+   .. codeblock:: SQL
+
+      DROP TABLE testlabtable;
+
+#. Verify the table is gone by executing the following to list the table:
+
+   .. codeblock:: SQL
+
+      select owner as schema_name,
+       table_name
+       from sys.all_tables
+       where table_name like 'TEST%';
 
 Clone Refresh
 .............
@@ -164,14 +202,18 @@ Verify Table is Back
 
 #. Launch **sqlplus**
 
-   - **User Name** - sysdba
-   - **Password** - oracle
-
    .. code-block:: Bash
 
-      sqlplus
+      sqlplus / as sysdba
 
-#.
+#. Verify the table is back by executing the following to list the table:
+
+   .. codeblock:: SQL
+
+      select owner as schema_name,
+       table_name
+       from sys.all_tables
+       where table_name like 'TEST%';
 
 Takeaways
 +++++++++
