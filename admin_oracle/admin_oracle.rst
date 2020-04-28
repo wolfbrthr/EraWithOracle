@@ -58,7 +58,7 @@ Write New Table Into Database
 
 #. Execute the following to create a table:
 
-   .. codeblock:: BASH
+   .. codeblock:: Bash
 
       CREATE TABLE testlabtable
       (
@@ -69,7 +69,7 @@ Write New Table Into Database
 
 #. Verify the new table is there by executing the following to list the table:
 
-   .. codeblock:: BASH
+   .. codeblock:: Bash
 
       select owner as schema_name,
        table_name
@@ -162,13 +162,13 @@ Delete Table
 
 #. Execute the following to Drop the table:
 
-   .. codeblock:: BASH
+   .. codeblock:: Bash
 
       DROP TABLE testlabtable;
 
 #. Verify the table is gone by executing the following to list the table:
 
-   .. codeblock:: BASH
+   .. codeblock:: Bash
 
       select owner as schema_name,
        table_name
@@ -208,7 +208,7 @@ Verify Table is Back
 
 #. Verify the table is back by executing the following to list the table:
 
-   .. codeblock:: BASH
+   .. codeblock:: Bash
 
       select owner as schema_name,
        table_name
