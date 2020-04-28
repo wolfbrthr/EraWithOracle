@@ -59,7 +59,7 @@ Write New Table Into Database
 
 #. Execute the following to create a table:
 
-   .. codeblock:: Bash
+   .. code-block:: SQL
 
       CREATE TABLE testlabtable
       (
@@ -70,12 +70,12 @@ Write New Table Into Database
 
 #. Verify the new table is there by executing the following to list the table:
 
-   .. codeblock:: Bash
+   .. code-block:: SQL
 
       select owner as schema_name,
-       table_name
-       from sys.all_tables
-       where table_name like 'TEST%';
+      table_name
+      from sys.all_tables
+      where table_name like 'TEST%';
 
 
 
@@ -114,7 +114,7 @@ Clone Your Database Server & Database
 #. Click **Next**
 
    - **Database Server** - Create New Server
-   - **Database Server Name** - *Initials*\ -proddb_Clone1
+   - **Database Server Name** - *Initials*\ _oracle_prod_Clone1
    - **Compute Profile** - ORACLE_SMALL
    - **Network Profile** - Primary-ORACLE-Network
    - **SSH Public Key Through** - Text
@@ -164,14 +164,14 @@ Delete Table
 
 #. Execute the following to Drop the table:
 
-   .. codeblock:: Bash
+   .. code-block:: SQL
 
       DROP TABLE testlabtable;
 
 
 #. Verify the table is gone by executing the following to list the table:
 
-   .. codeblock:: Bash
+   .. code-block:: SQL
 
       select owner as schema_name,
       table_name
@@ -213,12 +213,12 @@ Verify Table is Back
 
 #. Verify the table is back by executing the following to list the table:
 
-   .. codeblock:: Bash
+   .. code-block:: SQL
 
       select owner as schema_name,
-       table_name
-       from sys.all_tables
-       where table_name like 'TEST%';
+      table_name
+      from sys.all_tables
+      where table_name like 'TEST%';
 
 
 Takeaways
