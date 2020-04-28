@@ -110,7 +110,7 @@ Clone Your Database Server & Database
 
    .. figure:: images/9.png
 
-#. Click **Next*
+#. Click **Next**
 
    - **Database Server** - Create New Server
    - **Database Server Name** - *Initials*\ -proddb_Clone1
@@ -124,7 +124,7 @@ Clone Your Database Server & Database
 
    .. figure:: images/10.png
 
-#. Click **Next*
+#. Click **Next**
 
    - **Clone Name** - *Initials*\ _proddb_Clone1
    -  **SID** - *Initials*\ prod
