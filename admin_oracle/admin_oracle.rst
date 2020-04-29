@@ -84,7 +84,13 @@ Take Manual Snapshot of Database
 
    .. figure:: images/6.png
 
-#. Click **Actions > Snapshot**.
+#. Click **Actions > Log Catch Up**.
+
+   .. figure:: images/12.png
+
+#. Click **Yes*
+
+#. Once that is complete, click **Actions > Snapshot**.
 
    .. Figure:: images/7.png
 
