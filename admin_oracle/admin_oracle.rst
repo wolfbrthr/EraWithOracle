@@ -119,7 +119,7 @@ Clone Your Database Server & Database
    - **Database Server Name** - *Initials*\ _oracle_prod_Clone1
    - **Compute Profile** - ORACLE_SMALL
    - **Network Profile** - Primary-ORACLE-Network
-   - **SSH Public Key Through** - Text
+   - **SSH Public Key Through** - Select **Text**
 
    ::
 

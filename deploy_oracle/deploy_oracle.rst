@@ -4,13 +4,13 @@
 Deploying Oracle
 -----------------
 
-Traditional database VM deployment over resembles the diagram below. The process generally starts with a IT ticket for a database (from Dev, Test, QA, Analytics, etc.). Next one or more teams will need to deploy the storage resources and VM(s) required. Once infrastructure is ready, a DBA needs to provision and configure database software. Once provisioned, any best practices and data protection/backup policies need to be applied. Finally the database can be handed over to the end user. That's a lot of handoffs, and the potential for a lot of friction.
+Traditional database VM deployment resembles the diagram below. The process generally starts with a IT ticket for a database (from Dev, Test, QA, Analytics, etc.). Next one or more teams will need to deploy the storage resources and VM(s) required. Once infrastructure is ready, a DBA needs to provision and configure database software. Once provisioned, any best practices and data protection/backup policies need to be applied. Finally the database can be handed over to the end user. That's a lot of handoffs, and the potential for a lot of friction.
 
 .. figure:: images/0.png
 
 Whereas with a Nutanix cluster and Era, provisioning and protecting a database should take you no longer than it took to read this intro.
 
-**In this lab you will deploy a Oracle VM, by cloning a source Oracle 19c Source VM. This VM will act as a master image to create a profile for deploying additional SQL VMs using Era.**
+**In this lab you will deploy a Oracle VM, by cloning a source Oracle 19c Source VM. This VM will act as a master image to create a profile for deploying additional Oracle VMs using Era.**
 
 Clone Source Oracle VM
 ++++++++++++++++++++++
@@ -170,6 +170,10 @@ Register Your Database
 
    - **Database Name in Era** - *Initials*\ -orcl
    - **SID** - orcl19c
+
+   .. note::
+
+     The Oracle System ID (SID) is used to uniquely identify a particular database on a system. For this reason, one cannot have more than one database with the same SID on a computer system. When using RAC, all instances belonging to the same database must have unique SID's.
 
    .. figure:: images/13.png
 

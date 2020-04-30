@@ -26,7 +26,7 @@ In this exercise you will deploy a fresh Oracle database using your *Initials*\ 
    - **Network Profile** - Primary_ORACLE_NETWORK
    - Select **Enable High Availability**
    - **SYS ASM Password** - oracle
-   - **SSH Public Key for Node Access** -
+   - **SSH Public Key for Node Access** - Select **Text**
 
    ::
 
@@ -35,7 +35,7 @@ In this exercise you will deploy a fresh Oracle database using your *Initials*\ 
 
    .. note::
 
-         By selecting Enable High Availability, Oracle Grid is configured as part of the deployment and Oracle Automatic Storage Management (ASM) is used for volume management. Without High Availability enabled, Linux LVM and file systems would be used for database storage. Gris and ASM are required for clustered Oracle RAC deployments.
+         By selecting Enable High Availability, Oracle Grid is configured as part of the deployment and Oracle Automatic Storage Management (ASM) is used for volume management. Without High Availability enabled, Linux LVM and file systems would be used for database storage. Grid and ASM are required for clustered Oracle RAC deployments.
 
    .. figure:: images/4.png
 
