@@ -103,7 +103,7 @@ In this exercise, you will apply the October PSU patches to your manually cloned
 
 #. Monitor the progress on the **Operations** page. This process should take approximately 25 minutes.
 
-   During the patching process, Era will gracefully bring down database and Grid services, shut down the VM, replace the relevant virtual disks with thin clones from the 2.0 Software Profile, and bring the database server back online. <Anything more to add here?>
+   During the patching process, Era will gracefully bring down database and Grid services, shut down the VM, replace the relevant virtual disks with thin clones from the 2.0 Software Profile, and bring the database server back online.
 
    .. figure:: images/18.png
 
