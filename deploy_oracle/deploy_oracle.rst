@@ -10,10 +10,15 @@ Traditional database VM deployment resembles the diagram below. The process gene
 
 Whereas with a Nutanix cluster and Era, provisioning and protecting a database should take you no longer than it took to read this intro.
 
-**In this lab you will deploy a Oracle VM, by cloning a source Oracle 19c Source VM. This VM will act as a master image to create a profile for deploying additional Oracle VMs using Era.**
+Source Oracle VM
+++++++++++++++++++++++
+
+
 
 Clone Source Oracle VM
 ++++++++++++++++++++++
+
+**In this lab you will deploy a Oracle VM, by cloning a source Oracle 19c Source VM. This VM will act as a master image to create a profile for deploying additional Oracle VMs using Era.**
 
 This VM is running Oracle 19c with April PSU patches applied.
 
@@ -21,14 +26,14 @@ This VM is running Oracle 19c with April PSU patches applied.
 
    .. figure:: images/1.png
 
-#. Select the checkbox for **Oracle19cSource**, and click **Actions > Clone**.
+#. Select the checkbox for *USerXX*\ **-Oracle19cSource**, and click **Actions > Clone**.
 
    .. figure:: images/1b.png
 
 #. Fill out the following fields:
 
    - **Number Of Clones** - 1
-   - **Name** - *Initials*\ _oracle_base
+   - **Name** - *UserXX*\ **-MSSQLSourceVM-Patched**
    - **Description** - (Optional) Description for your VM.
    - **vCPU(s)** - 2
    - **Number of Cores per vCPU** - 1
@@ -36,13 +41,7 @@ This VM is running Oracle 19c with April PSU patches applied.
 
 #. Click **Save** to create the VM.
 
-   You will now create a copy of this VM which will later be used to install October PSU patches.
-
-#. Once the VM has been created, click **Actions > Clone** again.
-
-#. Change the name to *Initials*\ **_oracle_patched** and click **Save**.
-
-#. Select both VMs and click **Actions > Power On**.
+#. Select VM and click **Actions > Power On**.
 
 Exploring Era Resources
 +++++++++++++++++++++++
@@ -111,7 +110,7 @@ In this exercise, you will register your April PSU VM and register it as version
 #. Click **+ Register** and fill out the following **Database Server** fields:
 
    - **Engine** - Oracle
-   - **IP Address or Name of VM** - *Initials*\ _oracle_base
+   - **IP Address or Name of VM** - *UserXX*\ **-MSSQLSourceVM**
    - **Database Version** - 19.0.0.0
    - **Era Drive User** - oracle
    - **Oracle Database Home** - /u02/app/oracle/product/19.0.0/dbhome_1
@@ -143,7 +142,7 @@ In this exercise, you will register your April PSU VM and register it as version
    - **Type** - Single Instance
    - **Name** - *Initials*\ _ORACLE_19C
    - **Description** - (Optional)
-   - **Database Server** - Select your registered *Initials*\ _oracle_base VM
+   - **Database Server** - Select your registered *UserXX*\ **-MSSQLSourceVM**
 
    .. figure:: images/3.png
 
@@ -162,7 +161,7 @@ Register Your Database
 
    - **Engine** - ORACLE
    - **Database is on a Server that is:** - Registered
-   - **Registered Database Servers** - Select your registered *Initials*\ _oracle_base VM
+   - **Registered Database Servers** - Select your registered *UserXX*\ **-MSSQLSourceVM**
 
    .. figure:: images/12.png
 
