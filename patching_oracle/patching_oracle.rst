@@ -40,7 +40,7 @@ In this exercise, you will apply the October PSU patches to your manually cloned
 #. Click **+ Register** and fill out the following **Database Server** fields:
 
    - **Engine** - Oracle
-   - **IP Address or Name of VM** - *UserXX*\ **-MSSQLSourceVM-Patched**
+   - **IP Address or Name of VM** - *UserXX*\ **-Oracle19cSourceVM-Patched**
    -  **Database Version** - 19.0.0.0
    - **Era Drive User** - oracle
    - **Oracle Database Home** - /u02/app/oracle/product/19.0.0/dbhome_1
