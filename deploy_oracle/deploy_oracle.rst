@@ -13,11 +13,6 @@ Whereas with a Nutanix cluster and Era, provisioning and protecting a database s
 Source Oracle VM
 ++++++++++++++++++++++
 
-
-
-Clone Source Oracle VM
-++++++++++++++++++++++
-
 **In this lab you will deploy a Oracle VM, by cloning a source Oracle 19c Source VM. This VM will act as a master image to create a profile for deploying additional Oracle VMs using Era.**
 
 This VM is running Oracle 19c with April PSU patches applied.
