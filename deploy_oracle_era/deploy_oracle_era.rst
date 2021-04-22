@@ -9,24 +9,24 @@ Each quarter, Oracle releases a grouping of patches referred to as a PSU. **In t
 Create Oracle Server with Era
 +++++++++++++++++++++++++++++
 
-In this exercise you will deploy a fresh Oracle database using your *Initials*\ **_ORACLE_19C** 1.0 Software Profile.
+In this exercise you will deploy a fresh Oracle database using your *UserXX*\ **_ORACLE_19C** 1.0 Software Profile.
 
-#. Select **Databases** from the dropdown menu and **Sources** from the lefthand menu.
+#. Select **Databases** from the dropdown menu, and **Sources** from the left-hand menu.
 
-#. Click **+ Provision > Single Node Database**.
+#. Click **+ Provision > Oracle > Single Instance Database**.
 
 #. In the **Provision a Database** wizard, fill out the following fields to configure the Database Server:
 
-   - **Engine** - Oracle
    - **Database Server** - Create New Server
-   - **Database Server Name** - *Initials*\ _oracle_prod
+   - **Database Server Name** - *UserXX*\ _oracle_prod
    - **Description** - (Optional)
-   - **Software Profile** - *Initials*\ _ORACLE_19C
+   - **Nutanix Cluster** – EraCluster
+   - **Software Profile** - *UserXX*\ _ORACLE_19C
    - **Compute Profile** - ORACLE_SMALL
    - **Network Profile** - Primary_ORACLE_NETWORK
-   - Select **Enable High Availability**
-   - **SYS ASM Password** - oracle
-   - **SSH Public Key for Node Access** - Select **Text**
+   - Select **Enable High Availability (SIHA)**
+   - **SYS ASM Password** - Nutanix/4u
+   - **SSH Public Key for Node Access** - Select **Text**, and the copy the following text, and paste it into the *SSH Public Key for Node Access* text box:
 
    ::
 
@@ -39,10 +39,10 @@ In this exercise you will deploy a fresh Oracle database using your *Initials*\ 
 
    .. figure:: images/4.png
 
-#. Click **Next**, and fill out the following fields to configure the Database:
+#. Click **Next**, and fill out the following fields to configure the database:
 
-   -  **Database Name** - *Initials*\ _proddb
-   -  **SID** - *Initials*\ prod
+   -  **Database Name** - *UserXX*\ _proddb
+   -  **SID** - *UserXX*\ orclprod (default)
    -  **SYS and SYSTEM Password** - Nutanix/4u
    -  **Database Parameter Profile** - ORACLE_SMALL_PARAMS
 
@@ -59,17 +59,15 @@ In this exercise you will deploy a fresh Oracle database using your *Initials*\ 
 
       **Encryption** can be used in situations where compliance requires encryption and stops would-be attackers from bypassing the database and reading sensitive information directly from storage by enforcing data-at-rest encryption in the database layer.
 
-#. Click **Next** and fill out the following fields to configure the Time Machine for your database:
+#. Click **Next**, and then fill out the following fields to configure the Time Machine for your database:
 
-   - **Name** - *Initials*\ _proddb_TM (Default)
+   - **Name** - *UserXX*\ _proddb_TM (Default)
    - **Description** - (Optional)
    - **SLA** - DEFAULT_OOB_GOLD_SLA
    - **Schedule** - (Defaults)
 
    .. figure:: images/6.png
 
-#. Click **Provision** to begin creating your new database server VM and *Initials*\ **_proddb** database.
+#. Click **Provision** to begin creating your new database server VM and *UserXX*\ **_proddb** database.
 
-#. Select **Operations** from the dropdown menu to monitor the provisioning. This process should take approximately 60 minutes (depending on your cluster configuration).
-
-#. Please proceed to the following exercises while the database is being provisioned.
+#. Select **Operations** from the dropdown menu to monitor the provisioning. This process should take approximately 60 minutes (depending on your cluster configuration). This must complete before you are able to proceed.

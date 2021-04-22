@@ -4,20 +4,20 @@
 DB Administration with Era
 --------------------------
 
-We will now see how to perform normal database admin task with Era.
+We will now see how to perform common database administrations task withs Era.
 
-**In this lab you will Administor your ORACLE DB**
+In this lab you will administer your Oracle database.
 
 Explore Your Database
 ++++++++++++++++++++++
 
-#. In **Era**, select **Databases** from the dropdown menu and **Sources** from the lefthand menu.
+#. In **Era**, select **Databases** from the dropdown menu and **Sources** from the left-hand menu.
 
    .. figure:: images/1.png
 
-#. Click into your *Initials*\ **-proddb**, this will take you back into the Database Summary page. This page provides details of the Database, Database Server access, Time Machine schedule, Compute/Network/Software profiles used to provision.
+#. Click into your *UserXX*\ **-proddb**, this will take you to the *Database Summary* page. This page provides details of the database, database server access, Time Machine schedule, and compute/network/software profiles used to provision.
 
-    - **Database Summary:**
+    - **Database:**
 
     .. figure:: images/2.png
 
@@ -41,7 +41,7 @@ Before we take a manual snapshot of our Database, lets write a new table into ou
 Write New Table Into Database
 .............................
 
-#. SSH (Terminal/Putty) into your *Initials*\ -proddb VM
+#. SSH (Terminal/Putty) into your *UserXX*\ -proddb VM
 
    - **User Name** - oracle
    - **Password** - Nutanix/4u
@@ -78,9 +78,9 @@ Write New Table Into Database
 Take Manual Snapshot of Database
 ................................
 
-#. In **Era**, select **Databases** from the dropdown menu and **Sources** from the lefthand menu.
+#. In **Era**, select **Databases** from the dropdown menu and **Sources** from the left-hand menu.
 
-#. Click on the Time Machine for your Database *Initials*\ -proddb_TM
+#. Click on the Time Machine for your Database *UserXX*\ -proddb_TM
 
    .. figure:: images/6.png
 
@@ -94,7 +94,7 @@ Take Manual Snapshot of Database
 
    .. Figure:: images/7.png
 
-   - **Snapshot Name** - *Initials*\ -proddb-1st-Snapshot
+   - **Snapshot Name** - *UserXX*\ -proddb-1st-Snapshot
 
    .. Figure:: images/8.png
 
@@ -105,18 +105,18 @@ Take Manual Snapshot of Database
 Clone Your Database Server & Database
 +++++++++++++++++++++++++++++++++++++
 
-#. In **Era**, select **Time Machines** from the dropdown menu and select *Initials*\ -proddb_TM
+#. In **Era**, select **Time Machines** from the dropdown menu and select *UserXX*\ -proddb_TM
 
 #. Click **Actions > Clone Database**.
 
-   - **Snapshot** - *Initials*\ -proddb-1st-Snapshot (Date Time)
+   - **Snapshot** - *UserXX*\ -proddb-1st-Snapshot (Date Time)
 
    .. figure:: images/9.png
 
 #. Click **Next**
 
    - **Database Server** - Create New Server
-   - **Database Server Name** - *Initials*\ _oracle_prod_Clone1
+   - **Database Server Name** - *UserXX*\ _oracle_prod_Clone1
    - **Compute Profile** - ORACLE_SMALL
    - **Network Profile** - Primary-ORACLE-Network
    - **SSH Public Key Through** - Select **Text**
@@ -129,8 +129,8 @@ Clone Your Database Server & Database
 
 #. Click **Next**
 
-   - **Clone Name** - *Initials*\ _proddb_Clone1
-   -  **SID** - *Initials*\ prod
+   - **Clone Name** - *UserXX*\ _proddb_Clone1
+   -  **SID** - *UserXX*\ prod
    -  **SYS and SYSTEM Password** - Nutanix/4u
    -  **Database Parameter Profile** - ORACLE_SMALL_PARAMS
 
@@ -148,7 +148,7 @@ There are times when a table or other data gets deleted (by accident), and you w
 Delete Table
 ............
 
-#. SSH (Terminal/Putty) into your *Initials*\ -proddb_Clone1 VM
+#. SSH (Terminal/Putty) into your *UserXX*\ -proddb_Clone1 VM
 
    - **User Name** - oracle
    - **Password** - Nutanix/4u
@@ -181,11 +181,11 @@ Delete Table
 Clone Refresh
 .............
 
-#. In **Era**, select **Databases** from the dropdown menu and **Clones** from the lefthand menu.
+#. In **Era**, select **Databases** from the dropdown menu and **Clones** from the left-and menu.
 
-#. Select the Clone for your Database *Initials*\ _proddb and Click **Refresh**.
+#. Select the Clone for your Database *UserXX*\ _proddb and Click **Refresh**.
 
-   - **Snapshot** - *Initials*\ _proddb-1st-Snapshot (Date Time)
+   - **Snapshot** - *UserXX*\ _proddb-1st-Snapshot (Date Time)
 
 #. Click **Refresh**
 
@@ -194,7 +194,7 @@ Clone Refresh
 Verify Table is Back
 ....................
 
-#. SSH (Terminal/Putty) into your *Initials*\ -proddb_Clone1 VM
+#. SSH (Terminal/Putty) into your *UserXX*\ -proddb_Clone1 VM
 
    - **User Name** - oracle
    - **Password** - Nutanix/4u
