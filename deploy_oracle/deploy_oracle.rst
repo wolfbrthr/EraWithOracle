@@ -21,14 +21,14 @@ This VM is running Oracle 19c with April PSU patches applied.
 
    .. figure:: images/1.png
 
-#. Select the checkbox for *UserXX*\ **-Oracle19cSource**, and click **Actions > Clone**.
+#. Select the checkbox for *UserXX*\ **_Oracle19cSource**, and click **Actions > Clone**.
 
    .. figure:: images/1b.png
 
 #. Fill out the following fields:
 
    - **Number Of Clones** - 1
-   - **Name** - *UserXX*\ **-Oracle19cSource-Patched**
+   - **Name** - *UserXX*\ **_Oracle19cSource_Patched**
    - **vCPU(s)** - 2
    - **Number of Cores per vCPU** - 1
    - **Memory** - 8 GiB
@@ -75,11 +75,11 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 
    .. figure:: images/7a.png
 
-   Era has five built-in SLAs (Gold, Silver, Bronze, Brass, and None). SLAs control how the database is backed up. This can be with a combination of Continuous, Daily, Weekly Monthly and Quarterly protection intervals.
+   Era has five built-in SLAs (Gold, Silver, Bronze, Brass, and None). SLAs control how the database is backed up. This can be with a combination of Continuous, Daily, Weekly, Monthly, and Quarterly protection intervals.
 
 #. From the dropdown menu, select **Profiles**.
 
-   Profiles pre-define resources and configurations, making it simple to consistently provision environments and reduce configuration sprawl. For example, Compute Profiles specifiy the size of the database server, including details such as vCPUs, cores per vCPU, and memory.
+   Profiles pre-define resources and configurations, making it simple to consistently provision environments and reduce configuration sprawl. For example, Compute Profiles specify the size of the database server, including details such as vCPUs, cores per vCPU, and memory.
 
 #. If you do not see any networks defined under **Network**, click **+ Create > Oracle > Database Server VMs**.
 
@@ -101,8 +101,9 @@ In this exercise, you will register your April PSU VM and register it as version
 #. In **Era**, select **Database Servers VMs** from the dropdown menu, and then **List** from the left-hand menu.
 
 #. Click **+ Register > Oracle**, then fill out the following **Database Server VMs** fields:
+
    - **Nutanix Cluster** - EraCluster
-   - **IP Address or Name of VM** - *UserXX*\ **-Oracle19cSource**
+   - **IP Address or Name of VM** - *UserXX*\ **_Oracle19cSource**
    - **Listener Port** - 1521 (default)
    - **Era Drive User** - oracle
    - **Oracle Database Home** - /u02/app/oracle/product/19.0.0/dbhome_1
@@ -135,7 +136,7 @@ In this exercise, you will register your April PSU VM and register it as version
    - **Software Profile Version Name** - UserXX_ORACLE_19C (1.0)
    - **Software Profile Version Description** - (Optional)
    - **Nutanix Cluster** - EraCluster
-   - Select your registered *UserXX*\ **-Oracle19cSource**
+   - Select your registered *UserXX*\ **_Oracle19cSource** VM
 
    .. figure:: images/3.png
 
@@ -157,13 +158,13 @@ Register Your Database
 #. Click **+ Register > Oracle > Single Instance Database**, and then fill out the following fields:
 
    - **Database is on a Server VM that is:** - Registered
-   - **Registered Database Server VMs** - Select your registered *UserXX*\ **-Oracle19cSource VM**
+   - **Registered Database Server VMs** - Select your registered *UserXX*\ **_Oracle19cSource VM**
 
    .. figure:: images/12.png
 
 #. Click **Next**, and then fill out the following fields:
 
-   - **Database Name in Era** - *UserXX*\ -orcl
+   - **Database Name in Era** - *UserXX*\ _orcl
    - **SID** - orcl19c
 
    .. note::
@@ -174,7 +175,7 @@ Register Your Database
 
 #. Click **Next**, and then fill out the following fields:
 
-   - **Name** - *UserXX*\ -orcl_TM
+   - **Name** - *UserXX*\ _orcl_TM
    - **SLA** - DEFAULT_OOB_BRASS_SLA (no continuous replay)
 
    .. figure:: images/14.png

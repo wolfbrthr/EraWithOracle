@@ -118,7 +118,7 @@ Clone Your Database Server & Database
    - **Database Server** - Create New Server
    - **Database Server Name** - *UserXX*\ _oracle_prod_Clone1
    - **Compute Profile** - ORACLE_SMALL
-   - **Network Profile** - Primary-ORACLE-Network
+   - **Network Profile** - Primary_ORACLE_Network
    - **SSH Public Key Through** - Select **Text**
 
    ::

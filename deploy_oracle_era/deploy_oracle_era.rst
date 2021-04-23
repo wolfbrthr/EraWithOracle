@@ -4,10 +4,10 @@
 Deploying Oracle with Era
 -------------------------
 
-Each quarter, Oracle releases a grouping of patches referred to as a PSU. **In this lab you will walk through the deployment and patching of both Oracle and Grid software for an Oracle 19c database using Era.**
+In this lab, you use Era to deploy a new Oracle database.
 
-Create Oracle Server with Era
-+++++++++++++++++++++++++++++
+Create Oracle Database with Era
++++++++++++++++++++++++++++++++
 
 In this exercise you will deploy a fresh Oracle database using your *UserXX*\ **_ORACLE_19C** 1.0 Software Profile.
 
@@ -26,11 +26,11 @@ In this exercise you will deploy a fresh Oracle database using your *UserXX*\ **
    - **Network Profile** - Primary_ORACLE_NETWORK
    - Select **Enable High Availability (SIHA)**
    - **SYS ASM Password** - Nutanix/4u
-   - **SSH Public Key for Node Access** - Select **Text**, and the copy the following text, and paste it into the *SSH Public Key for Node Access* text box:
+   - **SSH Public Key for Node Access** - Select **Text**, and then click the icon in the upper right-hand corner of the below window to copy the script to your clipboard. You may then paste the following into the *SSH Public Key for Node Access* text box:
 
-   ::
+      ::
 
-      ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAii7qFDhVadLx5lULAG/ooCUTA/ATSmXbArs+GdHxbUWd/bNGZCXnaQ2L1mSVVGDxfTbSaTJ3En3tVlMtD2RjZPdhqWESCaoj2kXLYSiNDS9qz3SK6h822je/f9O9CzCTrw2XGhnDVwmNraUvO5wmQObCDthTXc72PcBOd6oa4ENsnuY9HtiETg29TZXgCYPFXipLBHSZYkBmGgccAeY9dq5ywiywBJLuoSovXkkRJk3cd7GyhCRIwYzqfdgSmiAMYgJLrz/UuLxatPqXts2D8v1xqR9EPNZNzgd4QHK4of1lqsNRuz2SxkwqLcXSw0mGcAL8mIwVpzhPzwmENC5Orw==
+         ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAii7qFDhVadLx5lULAG/ooCUTA/ATSmXbArs+GdHxbUWd/bNGZCXnaQ2L1mSVVGDxfTbSaTJ3En3tVlMtD2RjZPdhqWESCaoj2kXLYSiNDS9qz3SK6h822je/f9O9CzCTrw2XGhnDVwmNraUvO5wmQObCDthTXc72PcBOd6oa4ENsnuY9HtiETg29TZXgCYPFXipLBHSZYkBmGgccAeY9dq5ywiywBJLuoSovXkkRJk3cd7GyhCRIwYzqfdgSmiAMYgJLrz/UuLxatPqXts2D8v1xqR9EPNZNzgd4QHK4of1lqsNRuz2SxkwqLcXSw0mGcAL8mIwVpzhPzwmENC5Orw==
 
 
    .. note::
@@ -42,7 +42,8 @@ In this exercise you will deploy a fresh Oracle database using your *UserXX*\ **
 #. Click **Next**, and fill out the following fields to configure the database:
 
    -  **Database Name** - *UserXX*\ _proddb
-   -  **SID** - *UserXX*\ orclprod (default)
+   -  **SID** - orclprod (default)
+   -  **Global Database Name** - orclprod (default)
    -  **SYS and SYSTEM Password** - Nutanix/4u
    -  **Database Parameter Profile** - ORACLE_SMALL_PARAMS
 
@@ -66,7 +67,7 @@ In this exercise you will deploy a fresh Oracle database using your *UserXX*\ **
    - **SLA** - DEFAULT_OOB_GOLD_SLA
    - **Schedule** - (Defaults)
 
-   .. figure:: images/6.png
+   .. figure:: images/6.png FIX THIS SCREENSHOT TO SHOW GOLD
 
 #. Click **Provision** to begin creating your new database server VM and *UserXX*\ **_proddb** database.
 
