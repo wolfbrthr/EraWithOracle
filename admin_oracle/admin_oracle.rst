@@ -6,7 +6,7 @@ DB Administration with Era
 
 We will now see how to perform common database administrations task withs Era.
 
-In this lab you will administer your Oracle database.
+In this lab, you will administer your Oracle database.
 
 Explore Your Database
 ++++++++++++++++++++++
