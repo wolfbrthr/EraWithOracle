@@ -54,7 +54,7 @@ In this exercise, you will apply the October PSU patches to your manually cloned
 
 #. Monitor the progress on the **Operations** page. This process should take approximately 5 minutes.
 
-#. Once registration completes, select **Era > Profiles > Software** and click your *UserXX*\ **_ORACLE_19C** Software Profile. Observe that Era provides complete introspection into the packages installed within the operating system, including the *Database Software* and *Grid Infrastructure Software*. Note the *Patches/Bug Fixes Found* list under *Database Software*.
+#. Select **Era > Profiles > Software** and click your *UserXX*\ **_ORACLE_19C** Software Profile. Observe that Era provides complete introspection into the packages installed within the operating system, including the *Database Software* and *Grid Infrastructure Software*. Note the *Patches/Bug Fixes Found* list under *Database Software*.
 
    .. figure:: images/10.png
 
