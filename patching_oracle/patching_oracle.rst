@@ -43,7 +43,7 @@ In this exercise, you will apply the October PSU patches to your manually cloned
    - **IP Address or Name of VM** - *UserXX*\ **-Oracle19cSourceVM_Patched**
    - **Listener Port** - 1521 (default)
    - **Era Drive User** - `oracle`
-   - **Oracle Database Home** - /u02/app/oracle/product/19.0.0/dbhome_1`
+   - **Oracle Database Home** - `/u02/app/oracle/product/19.0.0/dbhome_1`
    -  **Grid Infrastructure Home** - `/u01/app/19.0.0/grid`
    - **Provide Credentials Through** - Password
    - **Password** - `Nutanix/4u`
