@@ -176,7 +176,7 @@ Delete Table
 
 #. Verify the table has been removed by executing the following to list the table:
 
-   ..code-block:: bash
+   .. code-block:: bash
 
       select owner as schema_name,
       table_name
@@ -221,7 +221,7 @@ Verify The Table Has Been Restored
 
 #. Verify the table is back by executing the following to list the table:
 
-     .. code-block:: Bash
+     .. code-block:: bash
 
        select owner as schema_name,
        table_name
