@@ -79,7 +79,7 @@ In this exercise, you will apply the October PSU patches to your manually cloned
 
    .. figure:: images/12.png
 
-   Before you can apply to patched Software Profile to your *UserXX*\ **_oracle_prod** VM, the Software Profile must first be published, otherwise Era will not show the version as available or recommended for updating.
+   Before you can apply the patched Software Profile to your *UserXX*\ **_oracle_prod** VM, the Software Profile must first be published, otherwise Era will not show the version as available or recommended for updating.
 
 #. Select the **2.0** profile and click **Update**.
 
@@ -106,6 +106,7 @@ In this exercise, you will apply the October PSU patches to your manually cloned
    - **Update to Software Profile Version** - Select the desired patch profile from the drop-down menu (in a real environment you could potentially publish several options).
    - **Start Update** – Now
    - **Confirm this request by providing the name of the Database Server VM** UserXX_oracle_prod
+   - Click **Update**
 
 #. Select the desired patch profile from the drop down menu (in a real environment you could potentially publish several options) and click **Patch 1 Database** to begin the update process.
 
