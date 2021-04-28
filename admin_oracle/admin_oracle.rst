@@ -141,62 +141,68 @@ Clone Your Database Server & Database
 
 #. Click **Clone**.
 
-#. Select **Operations** from the dropdown menu to monitor the progress. This process should take approximately 30-50 minutes. Please wait for the *Clone Database* operation to successfully complete before moving on to the next step.
+#. Select **Operations** from the dropdown menu to monitor the progress. This process should take approximately 20-40 minutes. Please wait for the *Clone Database* operation to successfully complete before moving on to the next step.
 
 Delete Table and Clone Refresh
 ++++++++++++++++++++++++++++++
 
-There are times when a table or other data gets deleted (by accident), and you would like to get it back. Here we will delete a table and use the Era Clone Refresh action from the last snapshot we created.
+There are times when a table or other data gets deleted, and you would like to get it back. Here we will delete a table, and use the Era *Clone Refresh* action from the last snapshot we created to restore that table.
 
 Delete Table
 ............
 
-#. SSH (Terminal/Putty) into your *UserXX*\ _proddb_clone1 VM
+#. Within **Prism Central > Virtual Infrastructure > VMs > List**, identify the IP address assigned to the *UserXX*\ **_proddb_clone1** VM using the *IP Addresses* column.
+
+#. SSH (Terminal/Putty) into your *UserXX*\ _proddb_clone1 VM.
 
    - **User Name** - oracle
    - **Password** - Nutanix/4u
 
-   .. code-block:: Bash
+   .. code-block:: bash
 
-     ssh oracle@<UserXX_proddb_clone1 IP address>
+      ssh oracle@<USERXX-PRODDB-CLONE1-IP-ADDRESS>
 
-#. Launch **sqlplus**
+#. Launch *sqlplus*.
 
-     .. code-block:: Bash
+   .. code-block:: bash
 
-       sqlplus / as sysdba
+      sqlplus / as sysdba
 
-#. Execute the following to Drop the table:
+#. Execute the following to drop the table:
 
-     .. code-block:: Bash
+   .. code-block:: bash
 
-       DROP TABLE testlabtable;
+      DROP TABLE testlabtable;
 
-#. Verify the table is gone by executing the following to list the table:
+#. Verify the table has been removed by executing the following to list the table:
 
-     .. code-block:: Bash
+   .. code-block:: bash
 
-       select owner as schema_name,
-       table_name
-       from sys.all_tables
-       where table_name like 'TEST%';
+      select owner as schema_name,
+      table_name
+      from sys.all_tables
+      where table_name like 'TEST%';
+
+   Sample output
+
+   .. figure:: images/14.png
 
 Refresh Clone
 .............
 
-#. In **Era**, select **Databases** from the dropdown menu and **Clones** from the left-hand menu.
+#. In **Era**, select **Databases** from the dropdown menu, and then **Clones** from the left-hand menu.
 
-#. Select the Clone for your database *UserXX*\ proddb_clone1 and Click **Refresh**.
+#. Select the Clone for your database *UserXX*\ proddb_clone1, and then click **Refresh**.
 
    - *Refresh to a* - Snapshot
    - Select the snapshot - *UserXX*\ _proddb_1st_snapshot (Date Time)
 
-#. Click **Refresh**
+#. Click **Refresh**.
 
-#. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 2-5 minutes.
+#. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 10-15 minutes. Please wait for the *Refresh Clone* operation to successfully complete before moving on to the next step.
 
-Verify Table is Back
-....................
+Verify The Table Has Been Restored
+..................................
 
 #. SSH (Terminal/Putty) into your *UserXX*\ _proddb_clone1 VM
 
@@ -215,12 +221,13 @@ Verify Table is Back
 
 #. Verify the table is back by executing the following to list the table:
 
-     .. code-block:: Bash
+     .. code-block:: bash
 
        select owner as schema_name,
        table_name
        from sys.all_tables
        where table_name like 'TEST%';
 
-Takeaways
-+++++++++
+   Sample output
+
+   .. figure:: images/15.png

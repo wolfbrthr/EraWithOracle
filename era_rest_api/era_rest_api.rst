@@ -18,7 +18,7 @@ Using the Era REST API Explorer
 
 Era features an "API first" architecture and provides a fully documented REST API to allow for automation and orchestration of its functions through external tools. Similar to Prism, Era also provides a Rest API Explorer to easily discover and test API functions.
 
-#. From the menu bar, select **Admin > REST API Explorer** from the top right.
+#. From the *Admin* dropdown (top right), select **REST API Explorer**.
 
    .. figure:: images/29.png
 
@@ -36,7 +36,7 @@ Era features an "API first" architecture and provides a fully documented REST AP
 
    .. figure:: images/32.png
 
-   This API can be used to create powerful workflows using tools like Nutanix Calm, ServiceNow, Ansible, or others. As an example you could provision a Calm blueprint containing the web tier of an application and use a Calm eScript to invoke Era to clone an existing database and return the IP of the newly provisioned database to Calm.
+This API can be used to create powerful workflows using tools like Nutanix Calm, ServiceNow, Ansible, and others. As an example, you could provision a Calm blueprint containing the web tier of an application, use a Calm eScript to invoke Era to clone an existing database, and return the IP of the newly provisioned database to Calm.
 
 Takeaways
 +++++++++

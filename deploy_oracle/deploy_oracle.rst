@@ -21,21 +21,21 @@ This VM is running Oracle 19c with April PSU patches applied.
 
    .. figure:: images/1.png
 
-#. Select the checkbox for *UserXX*\ **_Oracle19cSource**, and click **Actions > Clone**.
+#. Select the checkbox for *UserXX*\ **-Oracle19cSource**, and click **Actions > Clone**.
 
    .. figure:: images/1b.png
 
 #. Fill out the following fields:
 
    - **Number Of Clones** - 1 (default)
-   - **Name** - *UserXX_Oracle19cSource_*\ **Patched**
+   - **Name** - *UserXX-Oracle19cSource_*\ **Patched**
    - **vCPU(s)** - 2 (default)
    - **Number of Cores per vCPU** - 1 (default)
    - **Memory** - 8 GiB (default)
 
 #. Click **Save** to create the VM.
 
-#. Select your *UserXX_Oracle19cSource_*\ **Patched** VM, and click **Actions > Power On**.
+#. Select your *UserXX-Oracle19cSource_*\ **Patched** VM, and click **Actions > Power On**.
 
 Exploring Era Resources
 +++++++++++++++++++++++
@@ -103,7 +103,7 @@ In this exercise, you will register version 1.0 of your Oracle 19c Software Prof
 #. Click **+ Register > Oracle**, then fill out the following *Register Database Server VMs* fields:
 
    - **Nutanix Cluster** - EraCluster
-   - **IP Address or Name of VM** - *UserXX*\ **_Oracle19cSource**
+   - **IP Address or Name of VM** - *UserXX*\ **-Oracle19cSource**
    - **Listener Port** - 1521 (default)
    - **Era Drive User** - `oracle`
    - **Oracle Database Home** - `/u02/app/oracle/product/19.0.0/dbhome_1`
@@ -131,7 +131,7 @@ In this exercise, you will register version 1.0 of your Oracle 19c Software Prof
 
 #. Select **Operations** from the dropdown menu to monitor the progress. This process should take <5 minutes. Please wait for the *Register Database Server VM* operation to successfully complete before moving on to the next step.
 
-   Once the *UserXX*\ **_Oracle19cSource** server has been registered with Era, we need to create a software profile in order to deploy additional Oracle VMs.
+   Once the *UserXX*\ **-Oracle19cSource** server has been registered with Era, we need to create a software profile in order to deploy additional Oracle VMs.
 
 #. Select **Profiles** from the dropdown menu, and then **Software** from the left-hand menu.
 
@@ -142,7 +142,7 @@ In this exercise, you will register version 1.0 of your Oracle 19c Software Prof
    - **Software Profile Version Name** - UserXX_ORACLE_19C (1.0) (default)
    - **Software Profile Version Description** - (Optional)
    - **Nutanix Cluster** - EraCluster
-   - Select your registered *UserXX*\ **_Oracle19cSource** VM
+   - Select your registered *UserXX*\ **-Oracle19cSource** VM
 
    .. figure:: images/3.png
 
@@ -164,7 +164,7 @@ Register Your Database
 #. Click **+ Register > Oracle > Single Instance Database**, and then fill out the following fields:
 
    - **Database is on a Server VM that is:** - Registered
-   - **Registered Database Server VMs** - Select your registered *UserXX*\ **_Oracle19cSource VM**
+   - **Registered Database Server VMs** - Select your registered *UserXX*\ **-Oracle19cSource VM**
 
    .. figure:: images/12.png
 
