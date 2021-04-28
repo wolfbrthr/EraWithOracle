@@ -73,9 +73,12 @@ In this exercise, you will apply the October PSU patches to your manually cloned
    - **Name** - *UserXX*\ _ORACLE_19C (Oct19 PSU)
    - **Nutanix Cluster** - EraCluster
    - Select *UserXX*\ **-Oracle19cSource_Patched**
-   - Add Software Profile Version Notes – (Optional)
 
    .. figure:: images/10b.png
+
+#. Add Software Profile Version Notes – (Optional)
+
+   .. figure:: images/10c.png
 
 #. Click **Create**.
 

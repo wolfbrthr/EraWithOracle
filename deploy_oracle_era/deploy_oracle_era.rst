@@ -24,10 +24,10 @@ In this exercise you will deploy a new Oracle database using your *UserXX*\ **_O
    - **Software Profile** - *UserXX*\ _ORACLE_19C
    - **Compute Profile** - ORACLE_SMALL
    - **Network Profile** - Primary_ORACLE_NETWORK
-   - **ASM Driver** - None (default)
    - Select **Enable High Availability (SIHA)**
+   - **ASM Driver** - None (default)
    - **SYS ASM Password** - `Nutanix/4u`
-   - **SSH Public Key for Node Access** - Select **Text**, and then click the icon in the upper right-hand corner of the window below to copy the script to your clipboard. You may then paste the following into the *SSH Public Key for Node Access* text box:
+   - **SSH Public Key for Node Access** - Select **Text**, and then click the icon in the upper right-hand corner of the window below to copy the ssh key to your clipboard. You may then paste the following into the *SSH Public Key for Node Access* text box:
 
    .. code-block:: bash
 
